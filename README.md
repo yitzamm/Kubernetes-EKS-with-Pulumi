@@ -3,7 +3,7 @@
 <img src="https://github.com/user-attachments/assets/c3c79d41-eb6b-43b7-a9e2-5dc70122548f" width="300" height="300" style="display: block; margin: 0 auto;" alt="Image" />
 
 ## Description
-The goal of this project is to learn more about Kubernetes deployment with multiple pod replicas, proper service exposure, and managed configuration and secrets. This provides a strong foundation for real-world containerized application deployment and orchestration.
+The goal of this project is to gain hands-on experience with Kubernetes deployment, multiple pod replicas, proper service exposure, and managed configuration and secrets. This provides a strong foundation for real-world containerized application deployment and orchestration.
 
 ## 1. Docker Image Creation
 - Build a Docker image for a simple application (e.g., a “Hello World” API).
