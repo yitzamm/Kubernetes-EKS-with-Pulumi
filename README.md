@@ -1,5 +1,7 @@
 # Project: Kubernetes Fundamentals
 
+<img width="1200" height="1166" alt="Image" src="https://github.com/user-attachments/assets/c3c79d41-eb6b-43b7-a9e2-5dc70122548f" />
+
 ## Description
 The goal of this project is to learn more about Kubernetes deployment with multiple pod replicas, proper service exposure, and managed configuration and secrets. This provides a strong foundation for real-world containerized application deployment and orchestration.
 
