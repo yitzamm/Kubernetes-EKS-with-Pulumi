@@ -17,3 +17,48 @@ It's useful for testing and debugging. In real life you typically use services a
 Create pod replicas
 1. Run: kubectl apply -f hello-deployment.yaml
 2. Review the pods running with: kubectl get pods -w
+
+Upload to GitHub (commands)
+>> git init
+>> git config --global user.email "email@email.com"
+>> git config --global user.name "username"
+>> git remote add URL
+>> git add .
+>> git commit -m "Message"
+>> git push origin main
+
+Other Git commands
+1. Move to branch main: git checkout main
+2. Get commit history from branch main: git pull origin main
+3. Create a branch that shares commit history with main: git checkout -b <new-branch-name>
+4. Push to the secondary branch: git push -u origin master
+NOTE: -u sets the upstream so next time you can just do git push
+5. Merge branch feature with branch main: git merge master (checkout to main)
+------------------------------------------
+6. Move to branch main: git checkout main
+7. Make sure main local is up-to-date: git pull
+8. Create a branch that doesn't share commit history with main: git push --set-upstream origin <branch-name> eg. master
+9. Merge branches with unrelated commit history: git merge master --allow-unrelated-histories
+10. Push to main: git push origin main
+11. Delete a branch locally: git branch -d master
+12. Delete a branch in the repo: git push origin --delete master
+
+Create a service manifest
+1. Execute the service.yaml file: kubectl apply -f hello-service.yaml
+2. Verify with: kubectl get services
+NOTE: With a service in place, port forwarding is no longer required
+3. Test your connectivity to the local host: curl http://localhost
+NOTE: PowerShell's curl is equivalent to Invoke-WebRequest which returns additional data
+To limit the response to the app's body (expected output from Linux curl's command) you can use the .Content feature:
+(curl http://localhost).Content
+
+Set up ConfigMap and Secrets
+1. Create config and secrets yaml files
+2. Modify the deployment
+3. Run: kubectl apply -f hello-deployment.yaml
+
+Verification commands
+>> kubectl get all
+>> kubectl get service hello-service
+>> kubectl get pods
+>> kubectl logs hello-pod

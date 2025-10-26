@@ -10,10 +10,21 @@ spec:
   template:
     metadata:
       labels:
-        app: hello-k8s  # Label for our Pods
+        app: hello-k8s    # Label for our Pods
     spec:
       containers:
         - name: hello-container
           image: hello-k8s:v5
           ports:
           - containerPort: 3000
+          env:
+          - name: MESSAGE              # Create env variable from ConfigMap
+            valueFrom:
+              configMapKeyRef:
+                name: hello-config
+                key: MESSAGE
+          - name: API_KEY              # Create env variable from Secret
+            valueFrom:
+              secretKeyRef:
+                name: hello-secrets
+                key: API_KEY
