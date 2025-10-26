@@ -1,0 +1,19 @@
+Build a Docker image
+1. Make sure Docker Desktop is running
+2. Create a Docker container (PowerShell): docker build -t hello-k8s:v1 .
+3. Install kubectl using Chocolatey (PowerShell admin): choco install -y kubernetes-cli
+4. Verify installation: kubectl version --client
+
+Create a Kubernetes cluster
+1. Create a kind cluster from the Kubernetes tab in Docker's app
+2. Verify the cluster is ready, run: kubectl get nodes or kubectl logs -f hello-pod for ts
+3. You can get additional information with: kubectl describe pod hello-pod
+4. Deploy the pod into the cluster by running: kubectl apply -f hello-pod.yaml
+5. To delete the created pod and re-deploy you can run: kubectl delete pod hello-pod
+6. Test connection: kubectl port-forward hello-pod 3000:3000
+NOTE: Port-foward allows a temporary connection between the local machine and the pod. 
+It's useful for testing and debugging. In real life you typically use services and ingress communication.
+
+Create pod replicas
+1. Run: kubectl apply -f hello-deployment.yaml
+2. Review the pods running with: kubectl get pods -w

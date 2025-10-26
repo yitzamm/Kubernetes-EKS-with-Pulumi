@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+spec:
+  replicas: 3             # Run 3 copies of our Pod
+  selector:
+    matchLabels:
+      app: hello-k8s      # How the Deployment finds its Pods
+  template:
+    metadata:
+      labels:
+        app: hello-k8s  # Label for our Pods
+    spec:
+      containers:
+        - name: hello-container
+          image: hello-k8s:v5
+          ports:
+          - containerPort: 3000
